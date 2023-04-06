@@ -1,3 +1,84 @@
-<p> Hello, I am Jinyi Wang.</p>
-<p> I am a postgraduate student now.</p>
-<p> I am learning to build a personal page for myself.</p>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jinyi Wang's site</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+/* body 样式 */
+body {
+    font-family: Arial;
+    margin: 0;
+}
+
+/* 标题 */
+.header {
+    padding: 80px;
+    text-align: center;
+    background: black;
+    color: white;
+}
+
+/* 标题字体加大 */
+.header h1 {
+    font-size: 40px;
+}
+
+
+
+/* 主要的内容区域 */
+.main {   
+    -ms-flex: 70%; /* IE10 */
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+}
+
+
+
+/* 响应式布局 - 在屏幕设备宽度尺寸小于 700px 时, 让两栏上下堆叠显示 */
+@media screen and (max-width: 700px) {
+    .row {   
+        flex-direction: column;
+    }
+}
+
+/* 响应式布局 - 在屏幕设备宽度尺寸小于 400px 时, 让导航栏目上下堆叠显示 */
+@media screen and (max-width: 400px) {
+    .navbar a {
+        float: none;
+        width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Hello, I am JInyi Wang.</h1>
+  <p>I am a postgraduate student now.</p>
+</div>
+
+  <div class="main">
+      <h2>Postgraduate studies</h2>
+      <h5>Sep 2020 - now</h5>
+      <p>Majored in computer science.</p>
+      <p>Learning courses and conducting research.</p>
+      <br>
+      <h2>Udergraduate studies</h2>
+      <h5>Sep 2015 - Jul 2019</h5>
+      <p>Majored in English</p>
+      <p>Learning English.</p>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Thank you! </h2>
+</div>
+
+</body>
+</html>
