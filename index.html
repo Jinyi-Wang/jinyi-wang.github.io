@@ -1,101 +1,220 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Jinyi Wang's site</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Jinyi Wang</title>
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: Arial;
     margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fb;
 }
 
+/* ===== HEADER ===== */
 .header {
-    padding: 80px;
     text-align: center;
-    background: black;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #000000, #000000);
     color: white;
 }
 
 .header h1 {
-    font-size: 40px;
+    margin: 0;
+    font-size: 42px;
 }
 
-
-.main {   
-    -ms-flex: 70%; /* IE10 */
-    flex: 70%;
-    background-color: white;
-    padding: 20px;
+/* ===== TABS BAR ===== */
+.tabs {
+    display: flex;
+    justify-content: center;
+    background-color: #222;
 }
+
+.tabs button {
+    background: none;
+    border: none;
+    color: white;
+    padding: 14px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.tabs button:hover {
+    background-color: #444;
+}
+
+.tabs button.active {
+    background-color: #555;
+}
+
+/* ===== CONTENT BOX ===== */
+.content {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* hide all tab content */
+.tabcontent {
+    display: none;
+}
+
+h2 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+a {
+    color: #3a7bd5;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* FOOTER */
+
+.footer {
+    text-align: center;
+    padding: 15px 10px;
+    color: #666;
+    font-size: 12px;
+    border-top: 1px solid #eee;
+    margin-top: 30px;
+}
+
 
 </style>
 </head>
+
 <body>
 
+<!-- HEADER -->
 <div class="header">
-  <h1>Hello, this is Jinyi Wang. </h1>
-  <p>  It is Jin-yi, sounds like Gin-e(letter "e") in English.</p>
-  <p>Nice to meet you!</p>
-    
-  <p>I am a PhD student in Linköping University. (2023-now)</p>
-  <p>I got my master degree in computer science at Beijing University of Technology.(2020-2023)</p>
-  <p>Email: <a href="mailto:jinyiwang06@gmail.com">jinyiwang06@gmail.com</a></p> 
-  <p>Email: <a href="mailto:jinyi.wang@liu.se">jinyi.wang@liu.se</a></p>
-  <p> Ov< </p>
-
+    <h1>Jinyi Wang</h1>
+    <p>PhD Student, Linköping University</p>
 </div>
-    
 
+<!-- TABS -->
+<div class="tabs">
+    <button class="tablink active" onclick="openTab(event, 'about')">About</button>
+    <button class="tablink" onclick="openTab(event, 'research')">Research</button>
+    <button class="tablink" onclick="openTab(event, 'projects')">Projects</button>
+    <button class="tablink" onclick="openTab(event, 'links')">Links</button>
+    <button class="tablink" onclick="openTab(event, 'contact')">Contact</button>
+</div>
 
-  <div class="main">
-    <!-- <p> Hope you can find me detail information elsewhere because all my repositories are private :P </p> -->
+<!-- CONTENT -->
+<div class="content">
 
-      
-       <h2>Some relevant links:</h2>
-        <p><a href="https://orcid.org/0009-0005-0732-212X" target="_blank">Orcid</a></p>
-        <p><a href="https://liu.se/en/employee/jinwa71" target="_blank">LiU</a></p> 
-      
+    <div id="about" class="tabcontent" style="display:block;">
+        <h2>👋 About Me</h2>
+        <p>Hello! I am Jinyi Wang (Jin-yi, pronounced “Gin-e”).</p>
+        <p>I am currently a PhD student at Linköping University (2023–present).</p>
+        <p>I received my Master's degree in Computer Science from Beijing University of Technology.</p>
+        <br>
+        <p>In my daily life, I often find myself asking "why": 
+          Why does this happen? 
+          What leads people to act the way they do?
+          What process produced this outcome?
+        </p>
+        <!-- <p>My work is motivated by a fundamental question: <em>What drives observable behaviors and decisions?</em></p> -->
+        <p>I am fascinated by the gap between what we observe and the underlying mechanisms that produce it.</p>
+        <!-- <p>I am particularly interested in understanding how things work, not only technical systems, but also the reasoning, decision-making process behind human behavior.</p> -->
+        <p>Whether it is a user behavior, a reasoning process, or everyday phenomena, 
+          I enjoy exploring the hidden mechanisms that produce observable outcomes.</p>
+      </div>
+
+    <div id="research" class="tabcontent">
+        <h2>📊 Research Interests</h2>
+        <p><strong>Research keywords:</strong></p>
+        <ul>
+            <li>Visual Analytics</li>
+            <li>User Intention and Decision Making</li>
+            <li>Sensemaking and Reasoning Processes</li>
+        </ul>
+        <br>
+        <p>I am interested in developing methods and tools 
+          that help researchers and practitioners understand 
+          users' intentions, reasoning process, and decision-making behaviors when interacting with complex systems.</p>
+        <!-- <p>I am interested in understanding the hidden mechanisms behind obserable behaviors.</p> -->
+        <!-- <p>I aim to explore how human intentions, reasoning processes, and decision-making patterns can be inferred from the interaction traces and visual analytics systems.</p> -->
+        <p>My work focuses on moving from interaction traces and observable behaviors towards explanations of underlying intentions and reasoning processes.</p>
+        <!-- <p>I enjoy moving from observations to explanations: from what people do to why they do it, and from interaction traces to underlying intensions and reasoning processes behind them.</p> -->
+      </div>
+
+    <div id="projects" class="tabcontent">
+        <h2>💻 Projects</h2>
  
-      
-<!--       <h1>My code repositories:</h1>
-      
-      <h2><a href="https://github.com/Jinyi-Wang/AppRec" target="_blank">Application recommendation</a></h2>
+        <p><strong>(Ongoing) Local Power Grid Data Exploration</strong></p>
+        <p>This project develops a visual analytics tool for exploring data in local neighbourhood power systems.</p> 
 
-      <p>I conducted research as a postgraduate student. The research make application recommendations for users.</p>
-      <p>Some codes used in my research.</p>
-      <br> -->
-      
-<!--       <h2><a href="https://github.com/Jinyi-Wang/VAST2021MC2" target="_blank">Data Visualization</a></h2>
+        <p><strong>Power Plant Visualization</strong></p>
+        <p>This project presents an interactive visual interface for exploring power plant dataacross European countries.</p>
+ 
+        <p><strong>Application Recommendation System</strong></p>
+        <p>Master's thesis work and a paper titled "Application Recommendation Based on Metagraphs: Combining Behavioral and Published Information".</p>
 
-      <p>It is the code coded when I learned data visualization. It aims to slove one of the tasks in Mini-Challenge 2, VAST 2021.</p>
-      <p>Very interesting challenge!</p>
-      <br> -->
-      
-<!--
-      <h2>Postgraduate studies</h2>
-      <h5>Sep 2020 - now</h5>
-      <p>Majored in computer science.</p>
-      <p>Learning courses and conducting research.</p>
-      <br>
-      <h2>Udergraduate studies</h2>
-      <h5>Sep 2015 - Jul 2019</h5>
-      <p>Majored in English</p>
-      <p>Learning English.</p>
-  </div>
--->
+      </div>
+
+    <div id="links" class="tabcontent">
+        <h2>🔗 Links</h2>
+        <ul>
+            <li><a href="https://orcid.org/0009-0005-0732-212X" target="_blank">ORCID</a></li>
+            <li><a href="https://scholar.google.com/citations?hl=en&user=WvamcaUAAAAJ&view_op=list_works" target="_blank">Google Scholar</a></li>
+            <li><a href="https://liu.se/en/employee/jinwa71" target="_blank">LiU Profile</a></li>
+        </ul>
+    </div>
+
+    <div id="contact" class="tabcontent">
+        <h2>📫 Contact</h2>
+        <p>Email: <a href="mailto:jinyi.wang@liu.se">jinyi.wang@liu.se</a></p>
+        <p>Email: <a href="mailto:jinyiwang06@gmail.com">jinyiwang06@gmail.com</a></p>
+    </div>
 
 </div>
 
+<!-- FOOTER -->
 
 <div class="footer">
-  <h2>Thank you! </h2>
-<!--   <h5> If you want to know more about me in spare time, please click <a href="https://jinyi-wang.github.io/SpareTime/" target="_blank">here</a>.</h5>
-</div> -->
+    <p>© 2026 Jinyi Wang • Last updated: June 2026</p>
+</div>
+
+
+<!-- SCRIPT -->
+<script>
+function openTab(evt, tabName) {
+    let i, tabcontent, tablinks;
+
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+    }
+
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.classList.add("active");
+}
+</script>
 
 </body>
 </html>
